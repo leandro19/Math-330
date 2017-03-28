@@ -1,0 +1,107 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 5}
+\date{February 20, 2017}
+\author{Leandro Ribeiro\\(Worked with Kyle Franke and Joyce Gomez)}
+
+\maketitle
+
+\newtheorem*{prop4.32}{Proposition 4.32}
+\begin{prop4.32}
+	For all k,m $\in \N$, $f_{mk}$ is divisible $f_{m}$.
+\end{prop4.32}
+
+\begin{proof}
+	Let P(k) be the statement "$f_{mk}$ is divisible $f_{m}$." Let's first observe P(1).
+	\\\textbf{Base.} k = 1. $f_{m(1)} = f_{m} = f_{m} \cdot 1$.
+	\\\textbf{Successor.} Assume P(k). That is, $f_{mk}$ is divisible $f_{m}$. Consider $f_{m(k+1)}$. $f_{m(k+1)} = f_{mk + m}$. By proposition 4.30, we can rewrite this as $f_{mk}f_{m-1} + f_{mk+1}f_{m}$. By induction, we have that $f_{mk} = f_{m}j$ for some j $\in \Z$. Hence, $f_{m}jf_{m-1} + f_{mk+1}f_{m} = f_{m}(jf_{m-1} + f_{mk+1})$. We have proven P(k+1), and thus proven the proposition by induction.
+\end{proof}
+
+\newtheorem*{proj5.16}{Project 5.16}
+\begin{proj5.16}
+	Someone tells you that the following equalities are true for all sets A,B,C. In each case, either prove the claim or provide a counterexample.
+	\\(i) $A - (B \cup C) = (A - B) \cup (A - C)$.
+	\\(ii) $A \cap (B - C) = (A \cap B) - (A \cap C)$.
+\end{proj5.16}
+	(i) Say A = \{1,2,3,4\}, B = \{3,4,5\}, and C = \{1,6,7\}. $A - (B \cup C) = \{2\}$. On the other hand, $(A - B) \cup (A - C) = \{1,2,3,4\}$. Thus, the claim does not hold
+	\begin{proof}
+	(ii) $A \cap (B-C)$ is the intersection between A and B not including the elements in B that are also in C. Suppose we have an x $\in A \cap (B-C)$, by definition of intersection, we know x $\in A$ and x $\in (B - C)$. If x $\in (B - C)$, by definition, x $\in B$ but x  $\notin C$. Because x $\in A$, x $\in B$, and x $\notin C$, $x \in (A \cap B)$ and x $\notin (A \cap C)$. By definition of set subtraction, x $\in (A \cap B) - (A \cap C)$. Thus, $A \cap (B - C) \subseteq (A \cap B) - (A \cap C)$.
+	\\\indent Now assume x $\in (A \cap B) - (A \cap C)$. By definition, this means x$\in (A \cap B)$ and x $\notin (A \cap C)$. Because x $\in (A \cap B)$, this means x $\in A$ and x $\in B$ by definition of intersection. Because x $\in A$ but x $\notin (A \cap C)$, this means x $\notin C$. Because x $\in B$ but x $\notin C$, x $\in (B - C)$ by definition of set subtraction. Since we already know x $\in A$ and x $\in (B - C)$, we can conclude x $\in A \cap (B - C)$ by definition of intersection. Hence, $(A \cap B) - (A \cap C) \subseteq A \cap (B - C)$. Since $(A \cap B) - (A \cap C) \subseteq A \cap (B - C)$ and $A \cap (B - C) \subseteq (A \cap B) - (A \cap C)$, we may conclude $A \cap (B - C) = (A \cap B) - (A \cap C)$.
+	\end{proof}
+
+\newtheorem*{prop5.20}{Proposition 5.20}
+\begin{prop5.20}
+	Let A,B,C be sets.
+	\\(i) $A \times (B \cup C) = (A \times B) \cup (A \times C)$.
+	\\(ii) $A \times (B \cap C) = (A \times B) \cap (A \times C)$.
+\end{prop5.20}
+
+\begin{proof}
+	(i) Let x $\in A \times (B \cup C)$. By definition, this means x = (y,z) where y $\in A$ and z $\in (B \cup C)$. By definition of union, this means z $\in B$ or z $\in C$.
+	\\\textbf{Case 1:} z $\in B$. Since y $\in A$ and z $\in B$, x $\in (A \times B)$. Thus by definition of union x $\in (A \times B) \cup (A \times C)$.
+	\\\textbf{Case 2:} z $\in C$. Since y $\in A$ and z $\in C$, x $\in (A \times C)$. Thus by definition of union x $\in (A \times B) \cup (A \times C)$.
+	\\\indent We've proven that in both cases x $\in (A \times B) \cup (A \times C)$. Therefore, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+	\\ \\\indent Now let x $\in (A \times B) \cup (A \times C)$. This means x $\in (A \times B)$ or x $\in (A \times C)$.
+	\\\textbf{Case 1:} x $\in (A \times B)$. This means x = (y,z) where y $\in A$ and z $\in B$. By definition of union, because z $\in B$, z $\in (B \cup C)$. Because y $\in A$ and z $\in (B \cup C)$, x $\in A \times (B \cup C)$ By definition of $\times$.
+	\\\textbf{Case 2:}  x $\in (A \times C)$. This means x = (y,z) where y $\in A$ and z $\in C$. By definition of union, because z $\in C$, z $\in (B \cup C)$. Because y $\in A$ and z $\in (B \cup C)$, x $\in A \times (B \cup C)$ By definition of $\times$.
+	\\\indent We've proven that in both cases x $\in A \times (B \cup C)$. Therefore, $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$.
+	Because $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$ and $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$, $A \times (B \cup C) = (A \times B) \cup (A \times C)$ by mutual inclusion.
+
+\end{proof}
+
+\newtheorem*{prop6.6}{Proposition 6.6}
+\begin{prop6.6}
+(i) Given an equivalence relation on A, its equivalence classes form a partition of A. 
+\\\indent (ii) Conversely, given a partition $\Pi$ of A, define $\sim$ by $a \sim b$ if and only if a and b lie in the same element of $\Pi$. Then $\sim$ is an equivalence relation.
+\end{prop6.6}
+
+\begin{proof}
+	(i) Set $\Pi = \{[a] | a \in A\}$. Let's first argue every a $\in A$ is in some member of $\Pi$. Clearly [a] $\in \Pi$ and by proposition 6.4, a $\in [a]$. Hence every a $\in A$ lies in some $P \in \Pi$. By 6.5 for any [a], [b] $\in \Pi$ either [a] = [b] or $[a] \cap [b] = \emptyset$. If [a] $\neq$ [b], then [a] $\cap$ [b] = $\emptyset$, by 6.5. Thus $\Pi$ is a partition.
+	\\(ii) We define $a \sim b$ if and only if a,b $\in P \in \Pi$. \textbf{Reflexivity:} Since a is in the same part of the partition as itself, $a \sim a$. \textbf{Symmetry:} If a and b are in the same part $P \in \Pi$, then b and a are in the same part. Hence $a \sim b$ if and only if $b \sim a$. \textbf{Transitivity:} If a and b are in the same part $P \in \Pi$, and if b and c are in the same part $P \in \Pi$, then a and c are in the same part. Thus, $a \sim c$.
+\end{proof}
+
+\newtheorem*{prop6.18}{Proposition 6.18}
+\begin{prop6.18}\textbf{(Division Algorithm for Polynomials).}
+	Let n(x) be a polynomial that is not zero. For every polynomial m(x), there exist polynomials q(x) and r(x) such that\\\indent m(x) = q(x)n(x) + r(x)\\ and either r(x) is zero or the degree of r(x) is smaller than the degree of n(x).
+\end{prop6.18}
+
+\begin{proof}
+	By definition, $m(x) = a_{d}x^{d}+\dots+a_{0}$. Let P(d) be the statement "m(x) = q(x)n(x) + r(x)." Let's first observe P(0).
+	\\\textbf{Base.} d = 0. This means $m(x) = a_{0}$. $a_0$ is a constant, so by proposition 6.13 (the division algorithm) we know that $a_0 = qn + r$ for constants $q(x) = q, n(x) = n$, and $r(x) = r$.
+	\\\textbf{Successor.} Assume P(n) holds. That is, $m(x) = a_{n}x^{n}+\dots+a_{0} = q(x)n(x) + r(x)$. Consider $m(x) = a_{n+1}x^{n+1}+\dots+a_{0}$. I'm unsure what to do from this point on. But we must apply induction to prove P(n+1) holds.
+\end{proof}
+
+\newtheorem*{prop6.25}{Proposition 6.25}
+\begin{prop6.25}
+	If $a \equiv a' $ (mod n) and $b \equiv b' $ (mod n) then $a + b \equiv a' + b' $ (mod n) and $ab \equiv a'b' $ (mod n).
+\end{prop6.25}
+
+\begin{proof}
+	By definition, $a \equiv a'$ (mod n) means a - a' = qn, and $b \equiv b'$ (mod n) means b - b' = rn for some q,r $\in \Z$. If we add these equations together, we have a - a' + b - b' = qn + rn. We can rewrite this as (a + b) - (a' + b') = (q + r)n. By definition of $\equiv$, a + b $\equiv$ a' + b' (mod n).
+	\\\indent Consider ab - a'b'. Adding and subtracting ab', we have ab + ab' - ab' -a'b' = a(b - b') + (a - a')b'. Substituting, we have a(rn) + (qn)b'. This is equal to n(ar +qb'). Since, the expression is divisible by n, we can conclude ab $\equiv$ a'b' (mod n).
+\end{proof}
+
+\noindent\textbf{Sources.}
+	\\http://zimmer.csufresno.edu/~sdelcroix/sol111home6.pdf
+	\\http://zimmer.csufresno.edu/~sdelcroix/sol111home8.pdf
+\end{document}

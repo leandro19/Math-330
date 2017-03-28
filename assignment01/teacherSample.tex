@@ -1,0 +1,98 @@
+% A percent symbol instructs the compiler to ignore everything that follows it until the next hard line break. It's how you add comments to your code without it showing up in the compiled document.
+
+\documentclass{amsart}					% What kind of document is this? There are other classes like article, letter, etc
+\usepackage{amssymb,amsmath,amsthm}		% Packages add to the vocabulary of your code. These three give common math symbols and
+	 									% 	environments like for theorems and definitions.
+\usepackage{subfig} 					% A package for including figures that are broken into subfigures.
+\usepackage[colorlinks]{hyperref}		% For making links in your pdf. [colorlinks] is an option that affects the format of link text.
+\usepackage{graphicx} 					% Another graphics package that lets you specify diagrams using text. Kind of old fashioned.
+\usepackage{hypcap} 					% Causes links to figures to work properly. Usually.
+
+% you can create your own commands in the preamble in various ways:
+\DeclareMathOperator{\crit}{crit}
+\DeclareMathOperator{\diff}{diff}
+
+\newcommand{\co}{\colon\thinspace}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% This is a standard way to specify your special environments and their numberings.
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{sublemma}[thm]{Sublemma}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{df}[thm]{Definition}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{quest}[thm]{Question}
+\newtheorem{constr}[thm]{Construction}
+
+\title{The title of your paper} % For some reason, mathematicians tend to only capitalize the first word and proper names in titles of papers and sections.
+
+\begin{document} 
+\maketitle 			% Omit this if you don't want a big fancy title.
+\tableofcontents 	% Omit this if you don't want a big fancy table of contents. Omitting this is generally a good idea.
+
+\begin{section}{Getting started}
+LaTeX requires two things. First, you need the software to turn your code into a readable document - a compiler. See \href{http://miktex.org}{miktex.org} for the appropriate download; you should run the \emph{basic MikTex installer}.
+
+Once this is finished, you need some kind of text editor. Though notepad or TextEdit will do the job, I recommend \href{http://texstudio.sourceforge.net/}{TexStudio} for Windows. If you're on a Mac, I've been told \href{https://en.wikipedia.org/wiki/TeXShop}{TeXShop} is good.
+
+Once you have an compiler and a code editor installed, open the file \emph{sample.tex} in your editor. It's the code that compiles to create this pdf. Just take a look around, comparing it to this pdf. I bet you'll quickly see the correspondence.
+\end{section}
+
+\begin{section}{Title of the second section}
+Here are two kinds of lists. Use sparingly.
+\begin{enumerate}
+\item First item.
+\item Second item.
+\end{enumerate}
+\noindent Sometimes you don't want to indent.
+\begin{itemize}
+\item First item.
+\item Second item.
+\end{itemize}
+Define a function $F\co\Z\to\Q$ by the following formula. \[f(n)=\sum\limits_{k=0}^n \frac{(-1)^{k+1}}{2k-1}\] Observe that $\lim_{n\to\infty}f(n)=\pi/4$, while $\lim\limits_{n\to\infty}f(n)=\pi/4$.
+\begin{subsection}{The title of a subsection}\label{section1}Hello, world!\\ %the two backslashes specify a new paragraph. Another way to linebreak is to skip a line in your source.
+Sometimes it makes sense to refer to another work; see, for example \cite{GS}. For a list of commonly used symbols, see \cite{L}. For a more in-depth look at \LaTeX, see \cite{O}.
+\end{subsection}
+\end{section}
+
+\newpage %skip to a new page.
+
+\begin{section}{Figures}The subfig, hypcap, and graphicx packages that appear at the beginning of the document have to do with including figures that might have subfigures and captions, and subfigures with captions. It will be difficult if you're too picky about precisely where things are situated.
+
+\begin{figure}[h]\capstart
+	\begin{center}\includegraphics[width=0.5\linewidth]{pic}\end{center}
+	\caption{Chloe has something important to say.}\label{picture}
+\end{figure}
+
+The [h] in the code for Figure~\ref{picture} is optional. It specifies you want the figure to appear ``here" as opposed to the bottom of the page [b], top [t], or on its own special float page [p]. If you write [hb] it means you'd rather it be ``here" in the text, but will settle for the bottom of the page if that's not possible. The default, if left blank, is [htbp]. A few notes:
+\begin{enumerate}
+\item \href{http://inkscape.org}{Inkscape} is a fine, free figure-making program.
+\item It is best for your images to be in pdf format. In Inkscape, once you have your figure, press ctrl+shift+d and choose ``fit page to drawing" and save as a pdf into the same folder as your code.
+\item The label commands in the figure code allow you to link to them in your pdf. See Figure~\ref{picture} and also look back at Section~\ref{section1}, etc.
+\item You'll probably need to look at a forum or two and do some Google searches in order to get things up and running to your liking. My knowledge of figures in \LaTeX \ is limited.
+\end{enumerate}
+
+\begin{figure}[h!]\capstart%
+	\centering\capstart
+	\subfloat[First subcaption.]{\label{picture1}\includegraphics[width=0.4\linewidth]{fold}} \qquad \qquad
+	\subfloat[Second subcaption.]{\label{picture2}\includegraphics[width=0.4\linewidth]{cusp}}
+	\caption{A figure that consists of two subfigures.}
+\end{figure}
+
+The references to the other figures look like Figure~\ref{picture1} and Figure~\ref{picture2}. Notice I don't have to number the pictures in the code. The [h!] in the figure tells \LaTeX \ to put the figure ``here" even if the result looks ugly. Sometimes it ignores the ! anyway. Finally, the qquad commands put a little space between the figures.
+\end{section}
+\begin{thebibliography}{99} % The {99} specifies how much room to give to the column of labels.
+\bibitem[GS]{GS}R. Gompf and A. Stipsicz, 4-manifolds and Kirby Calculus, Graduate Studies in Math. \textbf{20}, Amer. Math. Soc., Providence, RI 1999. % The [GS] specifies the lable that appears in the document, while the {GS} specifies how you refer to the reference in the usage \cite{GS}.
+\bibitem[L]{L}A list of \href{http://amath.colorado.edu/documentation/LaTeX/Symbols.pdf}{Latex symbols} at the University of Colorado website.
+\bibitem[O]{O}The famous \href{http://tobi.oetiker.ch/lshort/lshort.pdf}{Not so short intro to \LaTeX} by Tobias Oetiker.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 8}
+\date{March 21, 2017}
+\author{Leandro Ribeiro\\(Worked with Kyle Franke and Joyce Gomez)}
+
+\maketitle
+
+\newtheorem*{prop6.26}{Proposition 6.26}
+\begin{prop6.26}
+	Fix an integer n $\geq$ 2. Addition $\oplus$ and multiplication $\odot$ on $\Z_n$ are
+commutative, associative, and distributive. The set $\Z_n$ has an additive identity, a
+multiplicative identity, and additive inverses.
+\end{prop6.26}
+
+\begin{proof}
+	Take $[a] \oplus [b]$ and $[a] \odot [b]$. By definition, these are equal to $[a + b]$ and $[a \cdot b]$ respectively. We may commute to have $[b + a]$ and $[b \cdot a]$. By definition again, these can be rewritten to $[b] \oplus [a]$ and $[b] \odot [a]$. Thus, $\odot$ and $\oplus$ are commutative.
+	\\\indent Take $([a] \oplus [b]) \oplus [c]$ and $([a] \odot [b]) \odot [c]$. By definition, these are equal to $([a + b]) \oplus [c]$ and $([a \cdot b]) \odot [c]$ respectively. We may rewrite this to be $[(a + b) + c]$ and $[(a \cdot b) \cdot c]$. We can apply associativity to get $[a + (b + c)]$ and $[a \cdot (b \cdot c)]$. By definition again we can write $[a] \oplus ([b + c])$ and $[a] \odot ([b \cdot c])$. Finally, this could be rewritten to $[a] \oplus ([b] \oplus [c])$ and $[a] \odot ([b] \odot [c])$. Thus, $\oplus$ and $\odot$ are associative.
+	\\\indent Take $[c] \odot ([a] \oplus [b])$. By definition, this can be rewritten as $[c] \odot ([a + b]) = [c(a + b)]$. If we distribute, we have $[ca + cb]$. By definition, this is equal to $[ca] + [cb] = [c] \odot [a] \oplus [c] \odot [d]$. Thus, $\odot$ and $\oplus$ are distributive.
+\end{proof}
+
+\newtheorem*{proj6.28}{Project 6.28}
+\begin{proj6.28}
+	Every integer $\geq$ 2 can be factored into primes.
+\end{proj6.28}
+\begin{proof}
+	Let P(k) for $k \geq 2$ be the claim "There are primes $q_{1}\dots q_{t}$ such that $k = q_{1}\dots q_{t}$."
+	\\\textbf{Base.} k = 2. The number 2 is a prime, so 2 = 2 is a prime factorization.
+	\\\textbf{Successor.} Suppose P(k) holds for $k \leq n$. Consider n + 1. We have two cases: 
+	\\\textbf{Case 1.} n + 1 is a prime. In this case $n + 1 = n + 1$ is the desired prime factorization.
+	\\\textbf{Case 2.} n + 1 is composite. There are some integers $m \neq \pm 1$ and $m \neq \pm (n+1)$ such that $m | n+1$. Thus there exists a $j \in \Z$ such that $m \cdot j = n + 1$. We may assume $m > 0$. Thus, $m,j \in \N$ and $m \cdot j = n + 1$. Additionally $m \neq 1$, $m \neq n + 1$, so $j \neq 1$ and $j \neq n + 1$. That is to say $2 \leq m$, $j < n + 1$. By our induction hypothesis, $k = q_{1}\dots q_{t}$ and $j = p_{1} \dots p_{r}$ where $q_{1}\dots q_{t}$ and $p_{1} \dots p_{r}$ are primes. Clearly, $q_{1} \dots q_{t}$ and $p_{1} \dots p_{r} = n + 1$ and is a prime factorization. \\That is to say, P(n + 1) holds.
+\end{proof}
+
+\newtheorem*{prop6.30}{Proposition 6.30}
+\begin{prop6.30}
+	for all k,m,n $\in \Z$, \center$gcd(km,kn) = |k|gcd(m,n)$.
+\end{prop6.30}
+
+\begin{proof}
+	$gcd(m,n) = mx + ny$. Thus, $|k|gcd(m,n) = |k|(mx +ny) = (|k|m)x + (|k|n)y$. By definition of gcd, we have$(|k|m)x + (|k|n)y = gcd(km,kn)$.\\ (I'm not sure I understood this proposition very well).
+\end{proof}
+
+\newtheorem*{prop6.31}{Proposition 6.31}
+\begin{prop6.31}
+	Let p be prime and m,n $\in \N$. If $p | mn$ then
+$p | m$ or $p | n$.
+\end{prop6.31}
+
+\begin{proof}
+	Assume $p \nmid m$. We must prove $p \mid n$. By the definition of greatest common divisor, we have $qp + rm = gcd(p,m)$. Because p is prime and $p \nmid m$, we know gcd(p,m) = 1. Thus we have $qp + rm = 1$. If we multiply by $n$ on both sides, we have $(qp + rm)n = qpn + rmn = n$. Because $p | mn$ and $p | qpn$, $p | (qpn + rmn)$. Thus, $p | n$
+\end{proof}
+
+\noindent\textbf{Sources.}
+\\http://www.math.umassd.edu/$\sim$ahausknecht/aohWebSiteSpring2017/courses/\\mth182Spring2017/sharedDownloads/HWSolutions/CZSection7\_6Solutions.pdf
+\\
+\\http://www.tkiryl.com/teaching/aa/les091503.pdf
+\end{document}

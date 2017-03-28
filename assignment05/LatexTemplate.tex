@@ -1,0 +1,104 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 5}
+\date{February 20, 2017}
+\author{Leandro Ribeiro\\(Worked with Kyle Franke and Joyce Gomez)}
+
+\maketitle
+
+\newtheorem*{prop4.6}{Proposition 4.6}
+\begin{prop4.6}
+	Let b $\in$ $\Z$ and k, m $\in$ $\Z$ $\geq$ 0.
+	\\(i) If b $\in$ $\N$ then $b^k$ $\in$ $\N$.
+	\\(ii) $b^m$$b^k$ = $b^{m + k}$.
+	\\(iii) ($b^m$$)^k$ = $b^m$$^k$.
+\end{prop4.6}
+
+\begin{proof}
+	(i) Isolate P(k): "$b^k$ $\in$ $\N$"
+	\\\textbf{Base.} k = 0, $b^0$ = 1. By definition, we have that 1 $\in$ $\N$, so P(0) holds.
+	\\\textbf{successor} Suppose P(n) holds. That is, $b^n$ $\in$ $\N$. ($b^n$) $\cdot$ b $\in$ $\N$, since b $\in$ $\N$ and $\N$ is closed under multiplication. By definition, $b^{n + 1}$ = $b^n$ $\cdot$ b. Hence $b^{n + 1}$ $\in$ $\N$. That is P(n + 1) holds. This completes the induction.
+	\\\indent (ii) We argue by induction on the claim P(k) "$b^m$$b^k$ = $b^{m + k}$."
+	\\\textbf{Base.} k = 0. In this case $b^0$ = 1, by definition. So $b^m$$b^k$ = $b^m$ $\cdot$ 1 = $b^m$. Plainly, $b^{m + 0}$ = $b^m$.
+	\\\textbf{Successor.} Suppose P(n) holds. Consider $b^m$$b^{n + 1}$. By definition, $b^{n + 1}$ = $b^n$b. So we may write $b^m$$b^{n + 1}$ = ($b^{m + n}$)b. On the other hand, ($b^{m + n}$)b = $b^{m + n + 1}$. We conclude that $b^m$$b^{n + 1}$ = $b^{m + n + 1}$. The induction is complete, so we conclude that P(n) holds for all n.
+	\\\indent (iii) We argue by induction the claim P(k) "($b^m$$)^k$ = $b^m$$^k$"
+	\\\textbf{Base.} k = 0. ($b^m$$)^0$. By definition, ($b^m$$)^0$ = 1 = $b^m$$^0$ = $b^0$ by our axioms for the integers.
+	\\\textbf{Successor.} Suppose P(n) holds. That is, ($b^m$$)^n$ = $b^m$$^n$. Consider ($b^m$$)^{n + 1}$. By definition, ($b^m$$)^{n + 1}$ = ($b^m$$)^{n}$$b^m$. ($b^m$$)^{n}$$b^m$ = $b^{mn}$$b^m$. $b^{mn}$$b^m$ = $b^{mn + m}$ By definition. Finally, $b^{mn + m}$ = $b^{m(n + 1)}$. We conclude that ($b^m$$)^{n + 1}$ = $b^{m(n + 1)}$.
+\end{proof}
+
+\newtheorem*{prop4.7}{Proposition 4.7}
+\begin{prop4.7}
+	For all k $\in$ $\N$ :
+	\\(i) $5^2$$^k$ - 1 is divisible by 24;
+	\\(ii) $2^2$$^k$$^+$$^1$ + 1 is divisible by 3;
+	\\(iii) $10^k$ + 3 $\cdot$ 4$^k$$^+$$^2$ + 5 is divisible by 9.
+\end{prop4.7}
+
+\begin{proof}
+	(i) Let P(k) be the sentence "$5^2$$^k$ - 1 is divisible by 24". Consider P(1):
+	\\\textbf{Base.} $5^{2(1)}$ - 1 = $5^{2}$ - 1 = 5 $\cdot$ 5 - 1 = 24. Thus P(1) holds.
+	\\\textbf{Successor.} Suppose P(n) holds. That is, $5^2$$^n$ - 1 is divisible by 24. Consider $5^{2(n + 1)}$ - 1. $5^{2(n + 1)}$ - 1 = $5^{2n + 2}$ - 1. By definition, $5^{2n + 2}$ - 1 = $5^{2n}$ $5^{2}$ - 1 = ($5^{2n}$ - 1)$5^{2}$ + $5^{2}$ - 1. We've assumed that $5^{2n}$ - 1= 24j, so we can substitute ($5^{2n}$ - 1)$5^{2}$ + $5^{2}$ - 1 =  24j $\cdot$ $5^{2}$ + $5^{2}$ - 1 = 24j $\cdot$ 25 + 24 = 24(25j + 1). Hence $5^{2(n + 1)}$ - 1 is divisible by 24. We conclude the proposition holds by the principle of induction.
+	\\(ii) Let P(k) be the sentence "$2^{2k + 1}$ + 1 is divisible by 3." Consider P(1):
+	\\\textbf{Base.} $2^{2(1) + 1}$ + 1 = $2^{3}$ + 1 = 8 + 1 = 9. 9 = 3(3). We have thus proven P(1).
+	\\\textbf{Successor.} We assume P(n) holds. That is, $2^{2n + 1}$ + 1 is divisible by 3. Consider $2^{2(n + 1) + 1}$ + 1. $2^{2(n + 1) + 1}$ + 1 = $2^{2n + 3}$ + 1. By definition, $2^{2n + 3}$ + 1 = $2^{2n+1}$$2^{2}$ + 1 = ($2^{2n+1}$ + 1)$2^{2}$ - $2^{2}$ + 1. Since we assumed P(n), we can substitute ($2^{2n+1}$ + 1)$2^{2}$ - $2^{2}$ + 1 = 3j$2^{2}$ - $2^{2}$ + 1 = 12j - 3 = 3(4j - 3). Hence $2^{2(n + 1) + 1}$ + 1 is divisible by 3. We have thus proven the proposition by induction.
+	\\(iii) Let P(k) be the sentence "$10^k$ + 3 $\cdot$ 4 $^k$$^+$$^2$ + 5 is divisible by 9." Consider P(1):
+	\\\textbf{Base.} $10^1$ + 3 $\cdot$ 4$^1$$^+$$^2$ + 5 = 10 + 3 $\cdot$ 64 + 5 = 10 + 192 + 5 = 207 = 9(23). Hence, P(1) holds.
+	\\\textbf{Successor.} Assume P(n) holds. That is, $10^n$ + 3 $\cdot$ 4$^n$$^+$$^2$ + 5 is divisible by 9. Consider $10^{(n + 1)}$ + 3 $\cdot$ 4$^{(n + 1)}$$^+$$^2$ + 5. $10^{(n + 1)}$ + 3 $\cdot$ 4$^{(n + 1)}$$^+$$^2$ + 5 = $10^{n}$10 + 3 $\cdot$ 4$^{n + 2}$ 4 + 5 = $10^n$ + 3 $\cdot$ $4^{n+2}$ + 5 + 9 $\cdot$ $10^{n}$ + 3 $\cdot$ 3 $\cdot$ $4^{n+2}$. Because we assumed P(n), we can substitute $10^n$ + 3 $\cdot$ $4^{n+2}$ + 5 + 9 $\cdot$ $10^{n}$ + 3 $\cdot$ 3 $\cdot$ $4^{n+2}$ = 9j + 9 $\cdot$ $10^{n}$ + 3 $\cdot$ 3 $\cdot$ $4^{n+2}$  = 9j + 9 $\cdot$ $10^{n}$ +  9$\cdot$ $4^{n+2}$ = 9(j + $10^{n}$ +  $4^{n+2}$). We have thus shown that P(n + 1) holds, and have proven the proposition by induction.
+\end{proof}
+
+\newtheorem*{prop4.8}{Proposition 4.8}
+\begin{prop4.8}
+	For all k $\in$ $\N$, $4^k$ $>$ k.
+\end{prop4.8}
+
+\begin{proof}
+	Let P(k) be the statement "$4^k$ $>$ k." Consider P(1):
+	\\\textbf{Base.} $4^1$  = 4 $>$ 1. Hence, P(1) holds.
+		\\\textbf{Successor.} Assume P(n) holds. That is, $4^n$ $>$ n. Consider $4^{n+1}$. By definition, $4^{n+1}$ = $4^{n}$4 $>$ n $\cdot$ 4 since we assumed P(n) and by proposition 2.7(iii). n $\cdot$ 4 = 4n = 3n + n. Because n $\in$ $\N$, 3n $\geq$ 3(1) $>$ 1. Therefore, 3n + n $>$ 1 + n = n + 1. We can conclude that $4^{n+1}$ $>$ n + 1, and have proven the proposition by induction.
+\end{proof}
+
+\newtheorem*{prop4.13}{Proposition 4.13}
+\begin{prop4.13}
+	For x $\neq$ 1 and k $\in$ $\Z_{\geq0}$, $\sum\limits_{j=0}^{k} x^{j} = \dfrac{1 - x^{k+1}}{1 - x}$.
+\end{prop4.13}
+
+\begin{proof}
+	Let P(k) be the statement "$\sum\limits_{j=0}^{k} x^{j} = \dfrac{1 - x^{k+1}}{1 - x}$." \\Let's first observe P(0).
+	\\\textbf{Base.} k = 0. $\sum\limits_{j=0}^{0} x^{j} = x^{0} = 1 = \dfrac{1 - x}{1 - x}$. We have thus proven that P(0) holds.
+	\\textbf{Successor} Assume P(n) holds. Consider $\sum\limits_{j=0}^{n + 1} x^{j}$.\\ $\sum\limits_{j=0}^{n + 1} x^{j} :=  \sum\limits_{j=0}^{n} x^j + x^{n+1}$. By induction,\\ $\sum\limits_{j=0}^{n} x^j + x^{n+1} = \dfrac{1 - x^{n + 1}}{1 - x} + x^{n+1} = \dfrac{1 - x^{n + 1} + (1 - x)^{n+1}}{1 - x} = \dfrac{1 - x^{n+2}}{1-x}$. Hence, P(n+1) holds, and we have proven the proposition by induction.
+\end{proof}
+
+\newtheorem*{prop4.17}{Proposition 4.17}
+\begin{prop4.17}
+	Let $(x_j)_{j=1}^{\infty}$ be a sequence in $\Z$, and let a,b,r $\in$ $\Z$ be such that a $\leq$ b. Then $\sum\limits_{j=a}^{b} x_j = \sum\limits_{j=a+r}^{b+r} x_{j-r}$.
+\end{prop4.17}
+
+\begin{proof}
+	Let P(a,b) be the statement "$\sum\limits_{j=a}^{b} x_j = \sum\limits_{j=a+r}^{b+r} x_{j-r}$".Let's first observe P(0,1).
+	\\\textbf{Base.} a = 0, b = 1. $\sum\limits_{j=0}^{1} x_j = x_0 + x_1  = x_{r - r} + x_{1 + r - r} = \sum\limits_{j=0+r}^{1+r} x_{j-r}$
+	\\\textbf{Successor.} Suppose P(m,n) holds. That is, $\sum\limits_{j=m}^{n} x_j = \sum\limits_{j=m+r}^{n+r} x_{j-r}$. Consider $\sum\limits_{j=m+1}^{n+1} x_j$. We can rewrite this as $\sum\limits_{j=m}^{n} x_j + x_{n+1} - x_{m}$. By induction, we have $\sum\limits_{j=m}^{n} x_j + x_{n+1} - x_{m} = \sum\limits_{j=m+r}^{n+r} x_{j-r} + x_{n+1} - x_{m}$.  By definition, we have\\ $\sum\limits_{j=m+r}^{n+r} x_{j-r} + x_{n+1} - x_{m}$ := $\sum\limits_{j=m+1+r}^{n+1+r} x_{j-r}$. We have proven P(m+1,n+1) holds, and thus proven the proposition by the principle of induction.
+\end{proof}
+\noindent\textbf{Sources.}
+\\https://www.cs.uaf.edu/~maxwell/math215/HW8Sols.pdf
+\\http://www.voutsadakis.com/TEACH/LSSU/F03/LSSU215F03/hwk4sol.pdf
+\end{document}

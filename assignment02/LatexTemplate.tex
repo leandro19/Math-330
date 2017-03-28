@@ -1,0 +1,172 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the Natural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 2}
+\date{January 30, 2017}
+\author{Leandro Ribeiro\\(Worked with Kyle Franke and Joyce Gomez)}
+
+\maketitle
+
+\theoremstyle{plain}
+\newtheorem*{prop1.24}{Proposition 1.24}
+\begin{prop1.24}
+	Let x $\in$ \textbf{Z}. If x $\cdot$ x = x then x = 0 or 1.
+\end{prop1.24}
+
+\begin{proof}
+	By proposition 1.7, 1 $\cdot$ x = x. We may thus write x $\cdot$ x = x $\cdot$ 1. If x = 0, we are done. Otherwise, we assume x $\neq$ 0. Since x $\neq$ 0, axiom 1.5 (cancellation) implies x = 1.
+\end{proof}
+
+\newtheorem*{prop1.25}{Proposition 1.25}
+\begin{prop1.25}
+	For all m,n $\in$ \textbf{Z}:
+	\\(i) -(m + n) = (-m) + (-n).
+	\\(ii) -m = (-1)m.
+	\\(iii)	(-m)n = m(-n) = -(mn).
+\end{prop1.25}
+
+\begin{proof}
+	(i) (-1) $\cdot$ -(-m) = 1 $\cdot$ (-m)  by proposition 1.20. 1 $\cdot$ (-m) = -m by proposition 1.7. On the other hand, -(-m) = m by proposition 1.22. Thus -m = (-1)m. Because of this, we can say -(m + n) = (-1)(m + n). Distributivity (axiom 1.1.3) shows (-1)(m + n) = -1$\cdot$m + -1$\cdot$n. Using what we just recently proved again, -1$\cdot$m + -1$\cdot$n = (-m) + (-n). We conclude -(m + n) = (-m) + (-n).
+	\\
+	\indent(ii) (-1) $\cdot$ -(-m) = 1 $\cdot$ (-m) by proposition 1.20. 1 $\cdot$ (-m) = -m by proposition 1.7. On the other hand, -(-m) = m by proposition 1.22. Thus -m = (-1)m.
+	\\
+	\indent(iii) By proposition 1.20, we have (-m) $\cdot$ -(-n) = m $\cdot$ (-n). Also thanks to proposition 1.20, (-1) $\cdot$ -(-n) = 1 $\cdot$ (-n). Then by proposition 1.7, we can say that 1(-n) = -n. On the other hand, -(-n) = n by proposition 1.22. Thus (-1)n = -n. Because of this, we can say that m $\cdot$ (-n) = m $\cdot$ (-1)n. By commutativity, m $\cdot$ (-1)n = (-1)mn. Then by associativity, (-1)mn = -1(mn). Because we just proved (-1)n = -n $\forall$ n $\in$ \textbf{Z}, we can say that -1(mn) = -(mn). We conclude that (-m)n = m(-n)
+\end{proof}
+
+\newtheorem*{prop1.26}{Proposition 1.26}
+\begin{prop1.26}
+	Let m,n $\in$ \textbf{Z}. If mn = 0, then m = 0 or n = 0.
+\end{prop1.26}
+
+\begin{proof}
+	If we look at m $\cdot$ n, then by proposition 1.14, m $\cdot$ 0 = 0, so m $\cdot$ n = m $\cdot$ 0. Because of axiom 1.5, n = 0. On the other hand, commutativity shows m $\cdot$ n = n $\cdot$ m. If we look at this case, by proposition 1.14, n $\cdot$ 0 = 0, so n $\cdot$ m = n $\cdot$ 0. Because of axiom 1.5, m = 0. We conclude if m $\cdot$ n = 0, then m = 0 or n = 0.
+\end{proof}
+
+\newtheorem*{proj3.1}{Project 3.1}
+\begin{proj3.1}Express each of the following statements using quantifiers:
+\\(i) There exists a smallest natural number.
+\\(ii) There exists no smallest integer.
+\\(iii) Every integer is the product of two integers.
+\\(iv) The equation x$^{2}$ - 2y$^{2}$ = 3 has an integer solution.
+\end{proj3.1}
+
+\noindent
+\textbf{Answer.}
+\\(i) $\exists$ m $\in$ \textbf{N} $\forall$ n $\in$ \textbf{N} (m $<$ n $\vee$ m = n).
+\\(ii) $\forall$ m $\in$ \textbf{Z} $\exists$ n $\in$ \textbf{Z} n $<$ m.
+\\(iii) $\forall$ m,n $\in$ \textbf{Z} $\exists$ p $\in$ \textbf{Z} m $\cdot$ n = p.
+\\(iv) $\exists$ x,y $\in$ \textbf{Z} x$^{2}$ - 2y$^{2}$ = 3
+\newtheorem*{proj3.2}{Project 3.2}
+\begin{proj3.2}
+	In each of the following cases explain what is meant by the statement and decide whether it is true or false.
+\\(i) For each x $\in$ Z there exists y $\in$ Z such that x + y = 1.
+\\(ii) There exists y $\in$ Z such that for each x $\in$ Z, x + y = 1.
+\\(iii) For each x $\in$ Z there exists y $\in$ Z such that xy = x.
+\\(iv) There exists y $\in$ Z such that for each x $\in$ Z, xy = x.
+\end{proj3.2}
+
+\noindent
+\textbf{Answer.}
+\\(i) This statement is saying that every integer x has an integer y that when added to it is equal to 1. This is true.
+\\(ii) This statement is saying that there is some universal integer y that when added to any integer x the sum is 1. This is false.
+\\(iii) This statement is saying that every integer x has an integer y that when multiplied together is equal to x. This statement is false, since 1 is the only integer capable of this (proposition 1.18).
+\\(iv) This statement is saying that there is a universal integer y that when multiplied with any integer x the product is x. This statement is true.
+
+\newtheorem*{proj3.3}{Project 3.3}
+\begin{proj3.3}
+Construct two more mathematical if-then statements that are true, but whose converses are false.
+\end{proj3.3}
+
+\noindent
+\textbf{Answer.}
+\\(i) There exists y $\in$ \textbf{Z} such that for each x $\in$ \textbf{Z} x $\cdot$ y = 0.
+\\    For each x $\in$ \textbf{Z} There exists y $\in$ \textbf{Z} such that x $\cdot$ y = 0.
+\\(ii) For each x $\in$ Z there exists y $\in$ Z such that x + y = 5.
+\\     There exists y $\in$ Z such that For each x $\in$ Z x + y = 5.
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+\textbf{1}	The classical logical connectives are and, or, not, and (if then). These are denoted, respectively, by $\wedge$, $\vee$, $\neg$, and $\rightarrow$. Write out the truth tables for $\wedge$, $\vee$, $\neg$, and $\rightarrow$.
+    }%
+}
+\textbf{Answer.}\\\\\begin{tabular}{c|c|c}
+P&$\wedge$&Q\\
+\hline
+T&T&T\\
+\hline
+T&F&F\\
+\hline
+F&F&T\\
+\hline
+F&F&F\\
+\end{tabular}
+\quad
+\begin{tabular}{c|c|c}
+P&$\vee$&Q\\
+\hline
+T&T&T\\
+\hline
+T&T&F\\
+\hline
+F&T&T\\
+\hline
+F&F&F\\
+\end{tabular}
+\quad
+\begin{tabular}{c|c}
+P&$\neg$P\\
+\hline
+T&F\\
+\hline
+F&T\\
+\end{tabular}
+\quad
+\begin{tabular}{c|c|c}
+P&$\rightarrow$&Q\\
+\hline
+T&T&T\\
+\hline
+T&F&F\\
+\hline
+F&T&T\\
+\hline
+F&T&F\\
+\end{tabular}
+\\\\
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+\textbf{2}	Find an expression using only $\vee$ and $\neg$ with the same truth table as $\rightarrow$.
+    }%
+}
+\textbf{Answer.}\\\\
+\begin{tabular}{c|c|c}
+$\neg$P&$\vee$&Q\\
+\hline
+T&T&T\\
+\hline
+T&F&F\\
+\hline
+F&T&T\\
+\hline
+F&T&F\\
+\end{tabular}
+\end{document}
