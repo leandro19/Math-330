@@ -20,47 +20,67 @@
 
 \begin{document}
 
-\title{Homework 9}
-\date{March 27, 2017}
-\author{Leandro Ribeiro\\(Worked with Kyle Franke)}
+\title{Homework 10}
+\date{April 03, 2017}
+\author{Leandro Ribeiro}
 
 \maketitle
 
-\newtheorem*{prop6.31}{Proposition 6.31}
+\newtheorem*{prop8.40}{Proposition 8.40}
 
-\begin{prop6.31}
-\end{prop6.31}
-	Let p be prime and m,n $\in \N$. If $p | mn$ then
-$p | m$ or $p | n$.
+\begin{prop8.40}
+	(i) $x \in \R_{>0}$ if and only if $\frac{1}{x} \in \R_{>0}$.
+	\center(ii) Let $x,y \in \R_{>0}$ . If $x < y$ then $0 < \frac{1}{y} < \frac{1}{x}$ .
+\end{prop8.40}
 \begin{proof}
-	Assume $p \nmid m$. We must prove $p \mid n$. By the definition of greatest common divisor, we have $qp + rm = gcd(p,m)$. Because p is prime and $p \nmid m$, we know gcd(p,m) = 1. Thus we have $qp + rm = 1$. If we multiply by $n$ on both sides, we have $(qp + rm)n = qpn + rmn = n$. Because $p | mn$ and $p | qpn$, $p | (qpn + rmn)$. Thus, $p | n$.
+	
+	(i) ($\Rightarrow$) Let's first assume $x \in \R_{>0}$. We must show $\frac{1}{x} \in \R_{>0}$. By the axiom 8.26(iv) either $\frac{1}{x} = 0$, $\frac{1}{x} \in \R_{>0}$, or $-\frac{1}{x} \in \R_{>0}$.
+	\\\textbf{Case 1.} $\frac{1}{x} = 0$. We know $1 \neq 0$ and we know $x \neq 0$ since $x \in \R_{>0}$. Let's consider $x \cdot \frac{1}{x}$. $1 = x \cdot \frac{1}{x} = x \cdot 0 = 0$, which is absurd.
+	\\\textbf{Case 2.} $\frac{1}{x} \in \R_{>0}$. This is what we want, if this case holds, we're done.
+	\\\textbf{Case 3.} Say $-\frac{1}{x} \in \R_{>0}$. Thus, $(-1)(\frac{1}{x}) \in \R_{>0}$. Since $x \in \R_{>0}$ and $(-1)(\frac{1}{x}) \in \R_{>0}$, $x \cdot (-1) \cdot (\frac{1}{x}) \in \R_{>0}$ since $\R_{>0}$ is closed under multiplication. Commuting, we see that $-1 \cdot 1 = -1 \in \R_{>0}$. On the other hand, $1 \in \R_{>0}$, so $1 + -1 = 0$ is in $\R_{>0}$, which is absurd.
+	\\\indent We may now infer that case 2 must hold. Hence $\frac{1}{x} \in \R_{>0}$.\\
+	\indent($\Leftarrow$)Now, let's assume $\frac{1}{x} \in \R_{>0}$. We must show $x \in \R_{>0}$. By the axiom 8.26(iv) either $x \in \R_{>0}$, $x = 0$, or $-x \in \R_{>0}$.
+	\\\textbf{Case 1.} $x = 0$. We know $1 \neq 0$ and we know $\frac{1}{x} \neq 0$ since $\frac{1}{x} \in \R_{>0}$. Let's consider $\frac{1}{x} \cdot x$. $1 = \frac{1}{x} \cdot x = \frac{1}{x} \cdot 0 = 0$, which is absurd.
+	\\\textbf{Case 2.} $x \in \R_{>0}$. This is what we want, if this case holds, we're done.
+	\\\textbf{Case 3.} Say $-x \in \R_{>0}$. Thus, $(-1)(x) \in \R_{>0}$. Since $\frac{1}{x} \in \R_{>0}$ and $(-1)(x) \in \R_{>0}$, $\frac{1}{x} \cdot (-1) \cdot (x) \in \R_{>0}$ since $\R_{>0}$ is closed under multiplication. Commuting, we see that $-1 \cdot 1 = -1 \in \R_{>0}$. On the other hand, $1 \in \R_{>0}$, so $1 + -1 = 0$ is in $\R_{>0}$, which is absurd.
+	\\\indent(ii) Consider $x < y$. Let's multiply each side by $\frac{1}{x}$. We obtain $1 < \frac{y}{x}$. By 8.40(i), $\frac{1}{x} \in \R_{>0}$; this is why $1 < \frac{y}{x}$. We can multiply both sides by $\frac{1}{y}$, and since $\frac{1}{y} \in \R_{>0}$, by 8.40(i), we have $\frac{1}{y} < \frac{1}{x}$. Finally, since $\frac{1}{y} \in \R_{>0}$, $0 < \frac{1}{y} < \frac{1}{x}$.
 \end{proof}
 
-\newtheorem*{thm6.35}{Theorem 6.35}
-\begin{thm6.35}
-	If $m \in \Z$ and p is prime, then \center $m^{p} \equiv m$ (mod p).
-\end{thm6.35}
+\newtheorem*{thm8.41}{Theorem 8.41}
+\begin{thm8.41}
+	Let $x \in \R_{>0}$. Then $x^2 < x^3$ if and only if $x > 1$.
+\end{thm8.41}
 
 \begin{proof}
-	\textbf{Case 1.} m = 0. $0^{p} \equiv 0$. Clearly, $0^{p} \equiv 0$ (mod p).
-	\\\indent\textbf{Case 2.} $m \geq 1$
-	We argue by induction on $m \geq 1$ for P(m) "$m^{p} \equiv m$ (mod p)."
-	\\\textbf{Base.} m = 1. So $1^{p} = 1$. Clearly, $1^{p} \equiv 1$ (mod p).
-	\\\textbf{Successor.} Suppose P(m) holds. Consider $(m + 1)^{p}$. By the binomial theorem, $(m + 1)^{p} = \sum_{n=0}^{p} {{p}\choose{n}} m^{n} \cdot 1^{p-n}
-	= \sum_{n=0}^{p} {{p}\choose{n}} m^{n} = {{p}\choose{0}} m^{0} + \sum_{n=1}^{p-1} {p\choose n} m^{n} + {p\choose p} m^{p}$. By proposition 6.34, $p | {p\choose n}$ and $p | {p\choose n} m^n$ for $1 \leq n \leq p-1$. Thus, $p | \sum_{n=1}^{p-1} {p\choose n} m^n$. We may write $\sum_{n=1}^{p-1} {p\choose n} m^n$ as $p \cdot j$ for some j. Hence, $(m + 1)^p = {p\choose 0} + p \cdot j + {p\choose p} m^{p} = 1 + p \cdot j + m^{p}$. We now see that $(m + 1)^p$ mod p = $1 + pj + m^{p}$ mod p = 1 mod p + pj mod p + $m^{p}$ mod p = 1 mod p + 0 mod p + $m^{p}$ mod p. = $(1 + 0)$ mod p + $m^p$ mod p = 1 mod p + $m^p$ mod p. By induction, we may rewrite this as 1 mod p + m mod p = (1 + m) mod p. We conclude that $(m + 1)^p \equiv (m + 1)$ mod p. This completes the induction.
-	\\\textbf{Case 3.} $m \leq - 1$. 
-	\\\textbf{Base.} m = -1. So $-1^{p} = \pm1$. Clearly, $-1^{p} \equiv -1$ (mod p).
-	\\\textbf{Successor.} Suppose P(m) holds. Consider $-(m + 1)^{p}$. Because we've already proven P(m + 1) holds and $\equiv$ is an equivalence relation, we may negate both sides of the equality to see that $-(m + 1)^p \equiv -(m + 1)$ mod p
+	($\Rightarrow$) We assume $x^2 < x^3$. Let's observe that $x^3 = x \cdot x^2$. On the other hand, $x^2 = x^2 \cdot 1$, so we have $1 \cdot x^2 < x \cdot x^2$. If $x^2 \in \R$, then $\frac{1}{x^2} \in \R_{>0}$. Since $x^2 < x^3$, we conclude that $x \neq 0$. Since $x \neq 0$, $x^2 \in \R_{>0}$. In this case, $\frac{1 \cdot x^2}{x^3} < \frac{x^3}{x^2}$, hence $1 < x$.
+	\\($\Leftarrow$) Suppose $1 < x$. Since $x > 0$, we have $x \in \R_{>0}$. Thus $x^2 \in \R_{>0}$. Multiplying both sides by $x^2$, we deduce that $x^2 < x^3$.
 \end{proof}
 
-\newtheorem*{prop6.33}{Proposition 6.33}
-\begin{prop6.33}
-	Let m, n $\in \N$. If m divides n and p is a prime factor of n that is not
-	a prime factor of m, then m divides $\frac{n}{p}$ .
-\end{prop6.33}
+\newtheorem*{prop8.43}{Proposition 8.43}
+\begin{prop8.43}
+	Let $x,y \in \R$ such that $x < y$. There exists $z \in \R$ such that $x < z < y$.
+\end{prop8.43}
 
 \begin{proof}
-	Since $m | n$, we can find $j \in \Z$ such that $m \cdot j = n$. From Euclid's lemma, since $p | n$, it must be the case that $p | m$ or $p | j$. Since $p | j$, we can write $j = i \cdot p$, so $n = m \cdot i \cdot p$. We can conclude that $m | \frac{n}{p}$.
+	By definition of $<$, $0 < y - x$ and $y - x \in \R_{>0}$. Suppose toward a contradiction there's no $z \in \R$ such that $x < z < y$. Thus, there is no real number s such that $0 < s < y - x$. For every $w \in \R_{>0}$, it is then the case that $y - x \leq w$. Hence $y - x$ is the last element of $\R_{>0}$, which contradicts theorem 8.42.
+\end{proof}
+
+\newtheorem*{prop8.50}{Proposition 8.50}
+\begin{prop8.50}
+	If the sets A and B are bounded above and $A \subseteq B$, then $sup(A) \leq sup(B)$.
+\end{prop8.50}
+
+\begin{proof}
+	Sup(B) is an upper bound for B. Since $A \subseteq B$, sup(B) is also an upper bound for A. Since sup(A) is the least upper bound, $sup(A) \leq sup(B)$.
+\end{proof}
+
+\newtheorem*{prop8.53}{Proposition 8.53}
+\begin{prop8.53}
+	Every nonempty subset of $\R$ that is bounded below has a greatest lower bound.
+\end{prop8.53}
+
+\begin{proof}
+	Let $B \subseteq \R$ be a non-empty set. bounded from below. Consider A := \{$r \in \R$ $|$ $\forall b \in B$ $r \leq b\}$. A is the set of lower bounds of B. The set B is non-empty, so there is some $b \in B$. This b is clearly an upper bound for A. Hence, A admits a least upper bound. Applying our axiom, sup(A) exists. Consider $b \in B$. Either $sup(A) \leq b$ or $b < sup(A)$. Suppose toward a contradiction $b < sup(A)$. In this case, b is an upper bound of A. This contradicts that sup(A) is the least upper bound. We thus can eliminate $b < sup(A)$. Thus, for all $b \in B$, $sup(A) \leq b$. We conclude that sup(A) is a lower bound for B.
 \end{proof}
 
 \newtheorem*{lemma}{Lemma}
@@ -69,10 +89,8 @@ $p | m$ or $p | n$.
 \end{lemma}
 
 \begin{proof}
-	let P(k) be the statement "$p | a_{i}$" for some $1 \leq i \leq k$. Let's first observe P(1).
-	\\\textbf{Base.} n = 1. $p | a_1$ because it is the only number given to us.
-	\\\textbf{Base.} n = 2. $p | a_1 \cdot a_{2}$. By Euclid's lemma, p must divide $a_{1}$ or $a_{2}$.
-	\\\textbf{Successor.} Assume P(n) holds. That is, $p | a_{i}$ for some $1 \leq i \leq n$. Consider the event that $p | $($a_1 \dots a_{n+1}$). By Euclid's lemma, either $p | $($a_1 \dots a_{n}$) or $p | a_{n + 1}$. If $p | a_{n + 1}$, we are done. Otherwise, our induction hypothesis states that $p | a_{i}$ for some $1 \leq i \leq n$. Therefore the proposition holds by induction.
+	Suppose toward a contradiction that the lemma fails. Let $n \geq 1$ be least $\sum := $ \{ $n \in \N$ $|$ there are $a_1\dots a_n$ integers such that $p | a_1\dots a_n$ but $p \nmid a_1$ and $p \nmid a_2$ and \dots $p \nmid a_n$\}. By the well-ordering principle there is a least element (the set is non-empty since we assume the lemma fails).
+	\\\indent By Euclid's lemma, we know that $n > 2$ (i.e. Euclid's lemma tells us the lemma holds for n = 2). Consider $p | a_1 \dots a_n$. We may rewrite $a_1\dots a_n = b \cdot c$ where b:= $a_1 \dots a_{n-1}$, and c := $a_n$. By Euclid's lemma, $p | b \cdot c$ implies $p | b$ or $p | c$. We know $p \nmid a_n$, so $p \nmid c$. Hence, $p | b$. But now $p | a_1 \dots a_{n-1}$ and $p \nmid a_1 \dots p \nmid a_{n-1}$. Since $n -1 \in \sum \in \N$, this contradicts that n is the least counter example. Thus, the lemma holds.
 \end{proof}
 
 \end{document}
