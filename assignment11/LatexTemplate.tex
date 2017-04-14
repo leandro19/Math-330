@@ -32,6 +32,11 @@
 	Let A and B be sets. There exists an injection from A to B if and only if there exists a surjection from B to A.
 \end{prop9.12}
 \begin{proof}
+	($\Rightarrow$) Suppose there's an injection $f: A \rightarrow B$. Fix $a_{o} \in A$. Observe that for $b \in f(a)$ there's a unique $a_b \in A$ such that $f(a_b) = b$. Define $g: B \rightarrow A$ by $g(b) =\begin{cases}
+		a_o \textrm{,  }b \notin f(a)\\
+		a_b \textrm{,  }b \in f(a) 
+	\end{cases}$is surjective by definition.
+	\\\indent($\Leftarrow$) Suppose $g: B \rightarrow A$ is surjective. For each $a \in A$, there is at least one $b \in B$ such that $g(b) =  a$. For each $a \in A$, fix some such $b_a \in B$. Define $f: A \rightarrow B$ by $f(a) = b_a$. Let's check if f is injective. Suppose $a_1 \neq a_2$. Then, $g(a_1) \neq g(a_2)$.
 \end{proof}
 
 \newtheorem*{prop10.9}{Proposition 10.9}
