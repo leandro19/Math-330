@@ -59,6 +59,7 @@
 \end{prop10.16}
 
 \begin{proof}
+	The sequence $(x_k)$ converging to L means that $\displaystyle{\lim_{k \to \infty}} x_{k} = L.$ Letting $\epsilon > 0$, this also means ther is some $N' \in \N$ such that $|x_{k'} - L| < \epsilon \textrm{   }\forall k' \geq N'$. Let $N := N' - 1$. Then if $k \geq N$ we have $k + 1 \geq N'$, and because it's given that $\displaystyle{\lim_{k \to \infty}} x_{k} = L.$ Applying this to $k' = k + 1$, we have that $|x_{k+1} - L| < \epsilon$. This by definition means that $\displaystyle{\lim_{k \to \infty}} x_{k+1} = L.$
 \end{proof}
 
 \newtheorem*{prop10.14}{Proposition 10.14}
@@ -67,5 +68,11 @@
 \end{prop10.14}
 
 \begin{proof}
+	Suppose towards a contradiction, that $L \neq L'$.
+	\\ Let $\epsilon = \frac{1}{2}|L - L'|$. Because $(x_k)$ converges to L, by definition there's some $N \in \N$ such that $|x_k - L| < \epsilon$ for all $k \geq N$. Also, by definition we have some $N' \in \N$ such that $|x_k - L'| < \epsilon$ for all $k \geq N'$. Let $k > max\{N,N'\}$. By the triangle inequality, we have $|L - L'| \leq |L - x_k| + |x_k - L'|.$ By our assumptions this gives $|L - L'| < 2\epsilon = |L - L'|$. This implies a real number is less than itself, which is absurd.
 \end{proof}
+
+\noindent\textbf{Sources.}
+\\http://users.math.msu.edu/users/duncan42/LimitsHW(Solutions).pdf
+
 \end{document}
