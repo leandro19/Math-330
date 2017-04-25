@@ -1,0 +1,94 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 12}
+\date{April 24, 2017}
+\author{Leandro Ribeiro}
+
+\maketitle
+
+\newtheorem*{prop10.13}{Proposition 10.13}
+
+\begin{prop10.13}~\\
+	\emph{(i)} $\displaystyle{\lim_{k \to \infty}} \frac{1}{k} = 0.$
+	\\\emph{(ii)} $\displaystyle{\lim_{k \to \infty}} \frac{k - 1}{k} = 1.$
+	\\\emph{(iii)} $\displaystyle{\lim_{k \to \infty}} \frac{1}{4^k} = 0.$
+
+\end{prop10.13}
+\begin{proof}
+	(i) Fix $\epsilon > 0 $. Let $N \in \N$ be such that $\forall n \geq \N$, $|0 - \frac{1}{n}| < \epsilon$. Take N large enough such that $ \frac{1}{\epsilon} < N$. Therefore $\frac{1}{N} < \epsilon$. Now for any $n \geq N$, $\frac{1}{n} \leq \frac{1}{N}$. We now see that for $n \geq N$, $| 0 - \frac{1}{n}| = \frac{1}{n} \leq \frac{1}{N} < \epsilon$. Therefore $\frac{1}{n} \rightarrow 0$.
+	\\\indent(ii) Fix $\epsilon > 0 $. Let $N \in \N$ be such that $\forall n \geq \N$, $|0 - \frac{1}{4^n}| < \epsilon$. Take N large enough such that $ \frac{1}{\epsilon} < N$. Therefore $\frac{1}{N} < \epsilon$. Now for any $n \geq N$, $\frac{1}{4^n} \leq \frac{1}{n} \leq \frac{1}{N} < \epsilon$. We now see that for $n \geq N$, $| 0 - \frac{1}{4^n}| = \frac{1}{4^n} \leq \frac{1}{n} \leq \frac{1}{N} < \epsilon$. Therefore $\frac{1}{4^n} \rightarrow 0$.
+	\\\indent(iii) Fix $\epsilon > 0 $. Let $N \in \N$ be such that $\forall n \geq \N$, $|1 - \frac{n-1}{n}| < \epsilon$. Take N large enough such that $ \frac{1}{\epsilon} < N$. Therefore $\frac{1}{N} < \epsilon$. Now for any $n \geq N$, $\frac{1}{n} \leq \frac{1}{N} < \epsilon$. We now see that for $n \geq N$, $| 1 - \frac{n-1}{n}| = | 1 - \frac{n}{n} + \frac{1}{n}| = | 0 + \frac{1}{n}| \leq \frac{1}{n} \leq \frac{1}{N} < \epsilon$. Therefore $\frac{n-1}{n} \rightarrow 1$.
+
+\end{proof}
+
+\newtheorem*{prop10.17}{Proposition 10.17}
+\begin{prop10.17}
+	Let $x \in \R_{\geq0}$ and $k \in \Z_{\geq0}$. Then $$(1 + x)^k \geq 1 + kx.$$
+\end{prop10.17}
+
+\begin{proof}
+	By the binomial theorem $(1 + x)^k = \sum\limits_{m=0}^{k} \binom{k}{m} 1^mx^{k-m} \geq \binom{k}{k-1} 1^{k-1}x^{k - (k - 1)} + \binom{k}{k}1^kx^0 = kx + 1$.
+\end{proof}
+
+\newtheorem*{prop10.27}{Proposition 10.27}
+\begin{prop10.27}
+	Given any $r \in \R_{>0}$, the number $\sqrt{r}$ is unique in the sense that, if x is a positive real number such that $x^2 = r$, then $x = \sqrt{r}$.
+\end{prop10.27}
+
+\begin{proof}
+	Suppose u and v are such that $u^2 = r$ and $v^2 = r$. Let $w = sup\{x \in \R | x^2 < r\}$. We will show u = w = v. For any $x \in A := \{x \in \R | x^2 < r\}$ we see that $x^2 < u^2 = r$. If $x < 0$, then clearly $x < u$. If $x \geq 0$, then propositio 10.5 ensures that $x < u$. Since w is the least upper bound of A, we conclude that $w \leq u$. But $w^2 = r = u^2$. By proposition 10.5 again it must be the case that w = u. Similarly, v = w.
+\end{proof}
+
+\newtheorem*{prop10.8}{Proposition 10.8}
+\begin{prop10.8}
+	\emph{(iv)} $|x + y| \leq |x| + |y|$.
+\end{prop10.8}
+
+\begin{proof}
+	Observe that $|x^2| = |x|^2$. That is, if $x \in \R_{\geq0}$, then $|x| = x$, so $|x|^2 = x^2$. If $x < 0$, then $-x \in \R_{\geq 0}$, so $|x| = -x$. Thus, $|x|^2 = (-x)^2 = (-1)^2 x^2 = x^2$. We now see that $|x + y|^2 = (x + y)^2 = x^2 + y^2 + 2xy \leq |x|^2 + |y|^2 + 2|x||y| = (|x| + |y|)^2$. Thus, $|x + y| \leq |x| + |y|$.
+\end{proof}
+
+\newtheorem*{prop10.23}{Proposition 10.23}
+\begin{prop10.23}
+	\emph{(v)} If $A \neq 0$, then $\displaystyle{\lim_{k \to \infty} \frac{1}{a_k} = \frac{1}{A}}$.
+\end{prop10.23}
+
+\begin{proof}
+	We know that $\forall \epsilon > 0$, $ \exists N \in \N$ such that $\forall n \geq N, |a_n - A| < \epsilon.$
+	\\Fix $\eta > 0$. Take $N \in \N$ such that for all $n \geq N$, $|a_n - A| < |a_n \cdot A|\eta$, and so $|\frac{1}{a_n} - \frac{1}{A}| = |\frac{a_n}{a_n \cdot A} - \frac{A}{a_n \cdot A}| = \frac{|a_n - A|}{|a_n \cdot A|} < \frac{|a_n \cdot A|\eta}{|a_n \cdot A|} = \eta$. We have thus proven $\frac{1}{a_n} \rightarrow \frac{1}{A}$.
+\end{proof}
+
+\newtheorem*{prop10.26}{Proposition 10.26}
+\begin{prop10.26}
+	Given any $r \in \R_{>0}$, the real number $\sqrt{r}$ is well defined, positive, and satisfies $\sqrt{r}^2 = r$
+\end{prop10.26}
+
+\begin{proof}
+	Put u = $\sqrt{r}$. Now for $1 \leq x$, we have that $x \leq x^2$. For each $x \in A$ either $x < 1$ or $x \geq 1$. If $x \geq 1$, then $x^2 > r$, so $x < r$.  We conclude that r is an upper bound for A. Since $\R$ is complete the supremum of A is well-defined. That is to say u is well-defined. To see that u is positive, we note $1 \in A$ and $u \geq 1$. Thus, u is positive. We now argue that $u^2 = r$. We know that one of either $u^2 = r$, $u^2 < r$, or $u^2 > r$ holds. 
+	\\\indent\textbf{Case 1} $u^2 > r$ Suppose toward a contradiction this case holds. Put $\delta = min\{1,u^2 - r\}$ and put h = $\frac{\delta}{4u}$. $u^2 - (u - h)^2 = u^2 - u^2 - h^2 + 2uh = h(2u-h) < h(2u) < \delta$. The distance between $u^2$ and $u - h^2$ is thus less than $\delta$. We conclude that $r < u - h^2 < u^2$.
+	\\\textbf{Fact.} If $x,y \geq 1$, then $x \leq y$ if and only if $x^2 \leq y^2$.
+	\\We know that $\delta \leq 1$ and $u \geq 1$. Thus $u - h > 0$. For any $x \in A$ such that $x \geq 0$, we have $x^2 < r < (u - h)^2$. Thus by our fact, $x < u - h$. Since u - h is positive, u is larger than all $x \in A$. The element $u - h$ is thus an upper bound for A. We chose u to be the least upper bound of A. Thus we have reached an absurdity.
+	\\\indent\textbf{Case 2} Suppose toward a contradiction that $u^2 < r$. Put $\delta = r - u^2$ and $h = min\{\frac{\delta}{4u},u\}$. We now see that $(u + h)^2 - u^2 = u^2 + h^2 + 2uh - u^2 = h(2u + h) \leq h3u < \delta$. So we now have $u^2 < u + h^2 < r$, but $u + h$ is a positive real number and $(u + h)^2 < r$. We conclude that $(u + h) \in A$. However, u is the least upper bound of A. So $u + h \leq u$, which is absurd.
+\end{proof}
+
+\end{document}
