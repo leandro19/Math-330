@@ -22,7 +22,7 @@
 
 \title{Challenge Problem 1}
 \date{March 24, 2017}
-\author{Leandro Ribeiro\\(Worked with Kyle Franke)}
+\author{Leandro Ribeiro}
 
 \maketitle
 
@@ -65,10 +65,10 @@ axiom.
 \end{proposition}
 
 \begin{proof}
-	(1) Let P(n) be the statement "if $m,n \in \N$, then $m + n \in \N$" Let's first observe P(1)
-	\\\textbf{Base.} n = 1. $m + 1 = s(m) = s(s^{m}(0))$. Thus, the proposition holds.
+	(1) Let P(n) be the statement "if $m \in N$, then $m + n \in N$".\\Because $m \in N$, there exists some $y \geq 1$ such that $ s^y(0) = m$. Let's first observe P(1)
+	\\\textbf{Base.} n = 1. $m + 1 = s^y(0) + 1 = s(s^y(0))$, because $m \in N$ and the definition of the successor function. Also by definition of the successor function, $s(s^y(0)) = s^{y+1}(0)$. Clearly, $y+1 > y \geq 1$. Thus, for $m+1$ there exists $y+1 > 1$ such that $s^{y+1}(m+1) = m+1$, $m+1 \in N$, and the proposition holds.
 	\\\textbf{Successor.} Assume P(n) holds. That is, $m + n  = s^m(n) \in N$. Consider $m + n + 1$. $m + n + 1 = s^{m+1}(n) = s(s^m(x))$ by definition. By induction, we know $s^m(n) \in N$. Thus, $s(s^m(x)) = s^m(x) + 1 = s^m(x) + s(0) \in N$ by the principal of mathematical induction.
-	\\\indent (2) Let P(n) be the statement " If $m,n \in \N$, then $mn \in \N$."Observe P(1):
+	\\\indent (2) Let P(n) be the statement " If $m \in N$, then $mn \in N$."Observe P(1):
 	\\\textbf{Base.}n = 1. $m \cdot 1 = m \in \N$.
 	\\\textbf{Successor.} Assume P(n) holds. That is, $mn \in \N$. Consider $m(n+1)$. By our axioms for the integers, we may rewrite this as $mn + m$. By induction, $mn \in N$, and we already know $m \in N$. Thus, by the first part of this proposition and induction, $mn + n \in N$.
 	\\\indent (3) By our axiom ($\ast$), we know $0 \notin N$.

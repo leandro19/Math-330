@@ -1,0 +1,42 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
+
+% \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
+
+\begin{document}
+
+\title{Homework 11}
+\date{May 9, 2017}
+\author{Leandro Ribeiro}
+
+\maketitle
+
+\newtheorem*{proj4.23}{Project 4.23 (Leibniz's formula)}
+
+\begin{proj4.23}
+	Consider an operation denoted by $'$ that is applied to symbols such as $u,v,w.$ Assume that the operation $'$ satisfies the following axioms:
+	$$(u + v)' = u' + v',$$ $$(uv)' = uv' + u'v,$$ $$(cu)' = cu',\textrm{where $c$ is a constant}$$
+	\\Define $w^{(k)}$ recursively by \\\\(i) $w^{(0)} := w$ \\(ii) Assuming $w^{(n)}$ defined (where $n \in \Z_{\geq 0}$), define $w^{(n+1)} := (w^{(n)})'$.\\
+	\\Prove: $$\sum_{m=0}^k \binom{k}{m}u^{(m)}v^{(k-m)}.$$
+\end{proj4.23}
+
+\begin{proof}
+\end{proof}
+\noindent\textbf{Sources.}
+
+\end{document}
