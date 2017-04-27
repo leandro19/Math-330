@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.20)  26 APR 2017 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.20)  27 APR 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -150,7 +150,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Package amsthm Warning: Unknown theoremstyle `proposition' on input line 59.
 
 
-Overfull \hbox (5.60098pt too wide) in paragraph at lines 68--77
+Overfull \hbox (5.60098pt too wide) in paragraph at lines 68--78
 []\OT1/cmr/m/n/12 (2) Let P(n) be the state-ment " If $\OML/cmm/m/it/12 m \OMS/
 cmsy/m/n/12 2 \OML/cmm/m/it/12 N$\OT1/cmr/m/n/12 , then $\OML/cmm/m/it/12 mn \O
 MS/cmsy/m/n/12 2 \OML/cmm/m/it/12 N$\OT1/cmr/m/n/12 ."Observe
@@ -161,11 +161,11 @@ MS/cmsy/m/n/12 2 \OML/cmm/m/it/12 N$\OT1/cmr/m/n/12 ."Observe
 Here is how much of TeX's memory you used:
  1661 strings out of 493013
  18285 string characters out of 6139317
- 76576 words of memory out of 5000000
+ 77576 words of memory out of 5000000
  5068 multiletter control sequences out of 15000+600000
  12272 words of font info for 50 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 34i,8n,28p,320b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,28p,522b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -176,7 +176,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
 .pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LatexTemplate.pdf (2 pages, 121558 bytes).
+Output written on LatexTemplate.pdf (2 pages, 121830 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
