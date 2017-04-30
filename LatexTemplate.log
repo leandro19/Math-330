@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.20)  30 APR 2017 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.20)  28 APR 2017 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -145,32 +145,29 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 21.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./LatexTemplate.a
-ux) ) 
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./LatexTemplate.aux) 
+) 
 Here is how much of TeX's memory you used:
- 1658 strings out of 493013
- 18278 string characters out of 6139317
- 77576 words of memory out of 5000000
- 5065 multiletter control sequences out of 15000+600000
- 12272 words of font info for 50 fonts, out of 8000000 for 9000
+ 1650 strings out of 493013
+ 18196 string characters out of 6139317
+ 71576 words of memory out of 5000000
+ 5058 multiletter control sequences out of 15000+600000
+ 11926 words of font info for 49 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 34i,5n,28p,979b,239s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on LatexTemplate.pdf (2 pages, 145505 bytes).
+ 34i,4n,28p,520b,188s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on LatexTemplate.pdf (1 page, 87029 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

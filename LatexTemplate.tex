@@ -6,34 +6,26 @@
 \usepackage{mathrsfs}
 \usepackage{enumerate}
 
-%All of these let you just type $\N$ for the Natural numbers symbol and so on
+%All of these let you just type $\N$ for the $\N$atural numbers symbol and so on
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+\setlength{\parindent}{36pt}
+\setlength{\parskip}{0em}
 
 % \begin{align} A=B & Axiom 1    Puts equation on left and axiom on right
 
 \begin{document}
 
-\title{5 09-06 McCormick Ryan}
-\date{September 6, 2016}
-\author{Ryan McCormick}
-
-\maketitle
-
-\theoremstyle{plain}
-\newtheorem*{prop1.7}{Proposition 1.7}
-\begin{prop1.7}
-	Insert proposition here
-\end{prop1.7}
+\newtheorem*{prop10.27}{Proposition 10.27}
+\begin{prop10.27}
+	Given any $r \in \R_{>0}$, the number $\sqrt{r}$ is unique in the sense that, if x is a positive real number such that $x^2 = r$, then $x = \sqrt{r}$.
+\end{prop10.27}
 
 \begin{proof}
-	Insert proof here
+	Suppose u and v are such that $u^2 = r$ and $v^2 = r$. Let $w = sup\{x \in \R | x^2 < r\}$. We will show u = w = v. For any $x \in A := \{x \in \R | x^2 < r\}$ we see that $x^2 < u^2 = r$. If $x < 0$, then clearly $x < u$. If $x \geq 0$, then proposition 10.5 ($x < u$ if and only if $x^2 < u^2$) ensures that $x < u$. Since w is the least upper bound of A, we conclude that $w \leq u$. But $w^2 = r = u^2$. By proposition 10.5 again it must be the case that w = u. Similarly, v = w.
 \end{proof}
-
 \end{document}
