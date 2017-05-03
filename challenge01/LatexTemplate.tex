@@ -72,9 +72,25 @@ axiom.
 	\\\textbf{Base.}n = 1. $m \cdot 1 = m \in N$.
 	\\\textbf{Successor.} Assume P(n) holds. That is, $mn \in \N$. Consider $m(n+1)$. By our axioms for the integers, we may rewrite this as $mn + m$. By induction, $mn \in N$, and we already know $m \in N$. Thus, by the first part of this proposition and induction, $mn + n \in N$.
 	\\\indent (3) By our axiom ($\ast$), we know $0 \notin N$.
-	\\\indent (4) Take $x \in \Z$. Suppose toward a contradiction $x \notin N$, $-x \notin N$, and $x \neq 0$. By axiom ($\ast\ast$), there is $m \geq 0$ such that $s^m(x) = 0$ or $s^m(0) = x$. Take $x$ such that $s^m(0) = x$, then by our definition of $N$, $x \in N$, which contradicts our initial assumption.
-	%\\\textbf{Case 1.} $m = 0$. Axiom ($\ast$) tells us for $m \geq 1$ $s^m(0) \neq 0$. If we take the contrapositive of this, $s^m(0) = 0$ if $m < 1$, thus $x = s^0(x) = 0$. Thus $x = 0$ which is absurd.
-	%\\\textbf{Case 3.} $m > 0$ and $s^m(x) = 0$. If $s^m(x) \neq 0$, then take $-x$. $s^{m}(0)$
+	\\\indent (4) Take $x \in \Z$. By axiom ($\ast\ast$), there is $m \geq 0$ such that $s^m(x) = 0$ or $s^m(0) = x$. If $x$ is such that $s^m(0) = x$, then by our definition of $N$, $x \in N$. If $x = 0$, then we are done. If $s^m(x) = 0$, we must prove two lemmas to show $-x \in N$.
+	\newtheorem*{lemma1}{Lemma}
+	\begin{lemma1}
+		For all $x,y \in \Z$, $s^m(x+y) = s^m(x) + y$.
+	\end{lemma1}
+	\begin{proof}
+		Take P(m) to be the statement "$s^m(x+y) = s^m(x) + y$" Let's first observe m = 1
+		\\\textbf{Base.} m = 1. $s^1(x+y) = (x + y) + 1 = (x + 1) + y = s^1(x) + y$.
+		\\\textbf{Successor.} Assume P(m) holds. Consider $s^{m+1}(x+y)$. By definition of the successor function, we may rewrite this as $s(s^{m}(x+y))$. By induction, we have that $s(s^m(x) + y)$. By definition, it follows that $s(s^m(x) + y) = s^m(x) + y + 1 = (s^m(x) + 1) + y = s(s^m(x)) + y = s^{m+1}(x) + y$. Thus, by the Principal of Mathematical Induction the lemma holds. 
+	\end{proof}
+	\newtheorem*{lemma2}{Lemma}
+	\begin{lemma2}
+		For all $x \in \Z$ If $s^m(x) = 0$, then $-x \in N$.
+	\end{lemma2}
+	\begin{proof}
+		Take P(m) to be the statement "If $s^m(x) = 0$, then $-x \in N$." Let's first observe m = 1.
+		\\\textbf{Base.} $s^1(x) = x + 1 = 0$. If $x + 1 = 0$, we may cancel to find that $x = -1$, and $-(-1) = 1 = s(0) \in N$.
+		\\\textbf{Successor.}  Assume P(m) holds. Observe $s^{m+1}(x) = 0$. $s^{m+1}(x) = s(s^m(x)) = s^m(x) + 1$. Applying the previous lemma, it follows that $ s^m(x) + 1 = s^m(x+1) = 0$. By induction, $-(x+1) \in \N$. Thus, the lemma and finally the proposition hold by the Principal of Mathematical Induction.
+	\end{proof}
 
 \end{proof}
 
