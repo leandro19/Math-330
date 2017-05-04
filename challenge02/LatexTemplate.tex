@@ -20,33 +20,34 @@
 
 \begin{document}
 
-\title{Homework 11}
+\title{Challenge Problem 2}
 \date{May 9, 2017}
 \author{Leandro Ribeiro}
 
 \maketitle
 
-\newtheorem*{prop}{Proposition}
-
+\theoremstyle{definition}
+\newtheorem*{prop}{Project 4.23 (Leibinz's formula)}
 \begin{prop}
-	$\displaystyle{\sum\limits_{i=0}^{\infty}\frac{1}{i}}$ diverges.
+	Consider an operation denoted by $'$ that is applied to symbols such as $u, v, w$. Assume that the operation $'$ satisfies the following axioms:
+	\\\begin{center} $(u+v)' = u' + v'$
+	\\ $(uv)' = uv' + u'v$
+	\\ $(cu)' = cu'$, where $c$ is a constant.
+	\end{center}
+	Define $w^{(k)}$ recursively by
+	\\\\(i) $w^{(0)} := w.$
+	\\(ii) Assuming $w^{(n)}$ defined (where $n \in \Z_{\geq 0}$), define $w^{(n+1)} := (w^{(n)})'$
+	\\
+	Prove: $$(uv)^{(k)} = \sum_{m=0}^{k} {{k}\choose{m}} u^{(m)}v^{(k-m)}.$$
 \end{prop}
 
 \begin{proof}
-	Suppose that the harmonic series converges to $S$. By definition, this means for all $\epsilon > 0$, there exists an $N \in \N$ such that for all $n \geq N$, $|S - \sum\limits_{i=0}^{n}\frac{1}{i}| < \epsilon$
-	\begin{equation*}
-	\begin{split}
-	S &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} + \dots
-	 \\ &= \Bigg(1 + \frac{1}{2}\Bigg) + \Bigg(\frac{1}{3} + \frac{1}{4}\Bigg) + \Bigg(\frac{1}{5} + \frac{1}{6}\Bigg) + \Bigg(\frac{1}{7} + \frac{1}{8}\Bigg) + \dots
-	 \\ &> \Bigg(\frac{1}{2} + \frac{1}{2}\Bigg) + \Bigg(\frac{1}{4} + \frac{1}{4}\Bigg) + \Bigg(\frac{1}{6} + \frac{1}{6}\Bigg) + \Bigg(\frac{1}{8} + \frac{1}{8}\Bigg) + \dots
-	 \\ &= 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} + \dots
-	 \\ &= S
-	\end{split}
-	\end{equation*}
-	\indent Thus, $S > S$, which is absurd.
+	Take P(k) to be the statement "$(uv)^{(k)} = \sum_{m=0}^{k} {{k}\choose{m}} u^{(m)}v^{(k-m)}.$" Let's observe k=0.
+	\\\textbf{Base.} $(uv)^{(0)} = \sum_{m=0}^{0} {{0}\choose{m}} u^{(m)}v^{(0-m)}. = u^{(0)}v^{(0)} = uv$
+	\\\textbf{Successor.} Assume P(k) holds. Observe $\sum\limits_{m=0}^{k+1}u^{(m)}v^{(k+1 - m)}$. By proposition 4.16(i) we may rewrite this as $${{k+1}\choose{0}}u^{(0)}v^{(k+1)} + \sum\limits_{m=1}^{k} {{k+1}\choose{m}} u^{(m)}v^{(k+1-m)} +{{k+1}\choose{k+1}} u^{(k+1)}v^{0}.$$ By part (ii) of our recursive definition and Corollary 4.20, it follows that this is equal to $$uv^{(k+1)} + \sum\limits_{m=1}^{k} \Bigg({{k}\choose{m-1}} +{{k}\choose{m}}\Bigg) u^{(m)}v^{(k+1-m)} +u^{(k+1)}v$$. By distributivity and Proposition 4.16(ii), $$ = uv^{(k+1)} + \sum\limits_{m=1}^{k} {{k}\choose{m-1}}u^{(m)}v^{(k+1-m)} + \sum\limits_{m=1}^{k}{{k}\choose{m}} u^{(m)}v^{(k+1-m)} +u^{(k+1)}v$$
+	Then, we apply proposition 4.17 to the first sum to get  $$ uv^{(k+1)} + \sum\limits_{m=0}^{k-1} {{k}\choose{m}}u^{(m+1)}v^{(k+1-(m+1))} + \sum\limits_{m=1}^{k}{{k}\choose{m}} u^{(m)}v^{(k+1-m)} +u^{(k+1)}v$$
+	We then combine $uv^{(k+1)}$ to the second sum and $u^{(k+1)}v$ to the first using proposition 4.16(i): $$\sum\limits_{m=0}^{k} {{k}\choose{m}}u^{(m+1)}v^{(k-m)} + \sum\limits_{m=0}^{k}{{k}\choose{m}} u^{(m)}v^{(k+1-m)}$$
+	Applying 4.16(ii) again and part (ii) of our recursive definition, we have $$\sum\limits_{m=0}^{k} {{k}\choose{m}}(u^{(m)})'v^{(k-m)} + {{k}\choose{m}} u^{(m)}(v^{(k-m)})'.$$ Using our second and third axioms for $'$, we thus have $$\sum\limits_{m=0}^{k} {{k}\choose{m}}(u^{(m)}v^{(k-m)})'.$$ Finally, by our first axiom for $'$, this is equal to $(\sum\limits_{m=0}^{k} {{k}\choose{m}}u^{(m)}v^{(k-m)})'$, and by induction and our recursive definition $(\sum\limits_{m=0}^{k} {{k}\choose{m}}u^{(m)}v^{(k-m)})' = ((uv)^{(k)})' = (uv)^{(k+1)}$. This completes the induction.
 \end{proof}
-
-\noindent\textbf{Sources.}
-\\http://scipp.ucsc.edu/~haber/archives/physics116A10/harmapa.pdf
 
 \end{document}
